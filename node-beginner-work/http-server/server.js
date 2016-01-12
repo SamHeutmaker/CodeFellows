@@ -1,9 +1,30 @@
 var http = require('http');
+var url = require('url');
 
 
-http.createServer(function(request, response) {
-	response.writeHead(200, {'Content-Type': 'text/plain'});
-	response.write('Hello Baby');
-	response.end();
+var start = function(route, handle) {
 
-}).listen(8888);
+  function onRequest(request, response) {
+  	var postData = "";
+    var pathname = url.parse(request.url).pathname;
+    console.log('Request for ' + pathname + " received");
+
+    request.setEncoding('utf8');
+
+    request.addListener('data', function(chunk) {
+    	postData += chunk;
+    	console.log("received chunk" + chunk);
+    });
+
+    request.addListener('end', function(){
+    	route(pathname, handle, response, postData);
+    });
+    
+  }
+
+  http.createServer(onRequest).listen(8888);
+  console.log('Server Has Started');
+
+}
+
+exports.start = start;
