@@ -1,0 +1,75 @@
+html,body{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+}
+
+h1{
+	padding: 0px;
+	margin: 0px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+.container{
+	height: 100%;
+	width: 700px;
+	position: relative;
+	margin: 0 auto 0 auto;
+	background-color: lightblue;
+
+}
+
+.delete{
+	position: absolute;
+	right: 0px;
+	margin-right: 20px;
+	background-color: transparent;
+	border: none;
+	font-size: 18px;
+	margin-top: -5px;
+}
+
+.checked{
+	text-decoration: line-through;
+}
+
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+
+.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+
+.new-task input:focus{
+  outline: 0;
+}
+
+ul{
+	width: 100%;
+	position: relative;
+	list-style: none;
+	padding: 0px;
+	margin: 30px 0px 0px 0px;
+}
+
+li{
+	background-color: lightgrey;
+	color: black;
+	font-family: arial;
+	padding: 15px;
+	margin: 0px;
+	height: 20px;
+	border-bottom: 1px solid black;
+}
+
